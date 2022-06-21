@@ -61,7 +61,8 @@ const int hk_general[] =
     HK_Mic,
     HK_SwapScreens,
     HK_CycleScreenLayout,
-    HK_CycleScreenSizing
+    HK_CycleScreenSizing,
+    HK_CycleScreenRotation
 };
 
 const char* hk_general_labels[] =
@@ -76,12 +77,13 @@ const char* hk_general_labels[] =
     "Microphone",
     "Swap screens",
     "Cycle screen layout",
-    "Cycle screen sizing"
+    "Cycle screen sizing",
+    "Cycle screen rotation"
 };
 
 const int keypad_num = 12;
 const int hk_addons_num = 2;
-const int hk_general_num = 11;
+const int hk_general_num = 12;
 
 
 InputConfigDialog::InputConfigDialog(QWidget* parent) : QDialog(parent), ui(new Ui::InputConfigDialog)

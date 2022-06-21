@@ -34,6 +34,7 @@ enum
     HK_SwapScreens,
     HK_CycleScreenLayout,
     HK_CycleScreenSizing,
+    HK_CycleScreenRotation,
     HK_SolarSensorDecrease,
     HK_SolarSensorIncrease,
     HK_FrameStep,

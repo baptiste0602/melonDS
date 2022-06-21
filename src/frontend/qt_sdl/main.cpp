@@ -344,6 +344,7 @@ EmuThread::EmuThread(QObject* parent) : QThread(parent)
     connect(this, SIGNAL(swapScreensToggle()), mainWindow->actScreenSwap, SLOT(trigger()));
     connect(this, SIGNAL(cycleScreenLayout()), mainWindow, SLOT(onCycleScreenLayout()));
     connect(this, SIGNAL(cycleScreenSizing()), mainWindow, SLOT(onCycleScreenSizing()));
+    connect(this, SIGNAL(cycleScreenRotation()), mainWindow, SLOT(onCycleScreenRotation()));
 
     if (mainWindow->hasOGL) initOpenGL();
 }
@@ -448,6 +449,7 @@ void EmuThread::run()
         if (Input::HotkeyPressed(HK_SwapScreens)) emit swapScreensToggle();
         if (Input::HotkeyPressed(HK_CycleScreenLayout)) emit cycleScreenLayout();
         if (Input::HotkeyPressed(HK_CycleScreenSizing)) emit cycleScreenSizing();
+        if (Input::HotkeyPressed(HK_CycleScreenRotation)) emit cycleScreenRotation();
 
         if (Input::HotkeyPressed(HK_SolarSensorDecrease))
         {
@@ -2809,6 +2811,15 @@ void MainWindow::onChangeScreenRotation(QAction* act)
 {
     int rot = act->data().toInt();
     Config::ScreenRotation = rot;
+
+    emit screenLayoutChange();
+}
+
+void MainWindow::onCycleScreenRotation()
+{
+    int oldRotation = Config::ScreenRotation;
+    Config::ScreenRotation = (oldRotation + 1) % 4;
+    actScreenRotation[Config::ScreenRotation]->setChecked(true);
 
     emit screenLayoutChange();
 }

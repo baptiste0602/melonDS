@@ -86,6 +86,7 @@ signals:
     void swapScreensToggle();
     void cycleScreenLayout();
     void cycleScreenSizing();
+    void cycleScreenRotation();
 
 private:
     volatile int EmuStatus;
@@ -278,6 +279,7 @@ private slots:
     void onChangeSavestateSRAMReloc(bool checked);
     void onChangeScreenSize();
     void onChangeScreenRotation(QAction* act);
+    void onCycleScreenRotation();
     void onChangeScreenGap(QAction* act);
     void onChangeScreenLayout(QAction* act);
     void onCycleScreenLayout();
