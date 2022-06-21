@@ -192,7 +192,6 @@ ConfigEntry ConfigFile[] =
     {"HKJoy_FastForwardToggle",   0, &HKJoyMapping[HK_FastForwardToggle],   -1},
     {"HKJoy_FullscreenToggle",    0, &HKJoyMapping[HK_FullscreenToggle],    -1},
     {"HKJoy_SwapScreens",         0, &HKJoyMapping[HK_SwapScreens],         -1},
-    {"HKJoy_SwapScreens",         0, &HKJoyMapping[HK_SwapScreens],         -1},
     {"HKJoy_CycleScreenLayout",   0, &HKJoyMapping[HK_CycleScreenLayout],   -1},
     {"HKJoy_CycleScreenSizing",   0, &HKJoyMapping[HK_CycleScreenSizing],   -1},
     {"HKJoy_SolarSensorDecrease", 0, &HKJoyMapping[HK_SolarSensorDecrease], -1},
