@@ -1405,7 +1405,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent)
             for (int i = 1; i < 9; i++)
             {
                 actSaveState[i] = submenu->addAction(QString("%1").arg(i));
-                actSaveState[i]->setShortcut(QKeySequence(Qt::ShiftModifier | (Qt::Key_F1+i-1)));
+                if (i == 1) actSaveState[i]->setShortcut(QKeySequence(Qt::Key_F5));
                 actSaveState[i]->setData(QVariant(i));
                 connect(actSaveState[i], &QAction::triggered, this, &MainWindow::onSaveState);
             }
@@ -1421,7 +1421,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent)
             for (int i = 1; i < 9; i++)
             {
                 actLoadState[i] = submenu->addAction(QString("%1").arg(i));
-                actLoadState[i]->setShortcut(QKeySequence(Qt::Key_F1+i-1));
+                if (i == 1) actLoadState[i]->setShortcut(QKeySequence(Qt::Key_F7));
                 actLoadState[i]->setData(QVariant(i));
                 connect(actLoadState[i], &QAction::triggered, this, &MainWindow::onLoadState);
             }
